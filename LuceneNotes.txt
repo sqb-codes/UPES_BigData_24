@@ -1,0 +1,66 @@
+Lucene
+- Search Engine Library
+- Full-text search library in Java
+- Add search functionality to your website
+- Open Source
+- Published by Apache Software Foundation
+
+Solr and Elasticsearch
+
+Concepts of Lucene
+- Indexing
+  - Lucene uses an inverted indexing of data instead of mapping pages to keywords
+- Documents
+  - Collection of fields and each field has a value associated with it
+- Fields
+  - Field is typically a key holding a data value
+- Analysis
+  - Converting given text into smaller and precise unit
+  - Text goes through various operations of extracting keywords, removing stopwords and punctuations, changing to lowercase
+  - To implement analysis we have built-in analyzer
+    - Standard Analyzer (recommended)
+    - Simple Analyzer
+    - WhiteSpace Analyzer
+    - Stop Analyzer
+    - Language Analyzer
+    - Custom-defined Analyzer - User-defined set of text filters
+    - Keyword Analyzer
+
+Stopwords - a, is, are, the, that, has...
+
+Example - A quick Brown Fox jumped over the lazy Dog at lazydog@gmail.com
+Standard Analyzer - remove stopwords, lowercase, tokenize, recognizes the email and URLs
+O/P : [quick][brown][fox][jumped][over][lazy][dog][lazydog@gmail.com]
+
+Simple Analyzer - lowercase and tokenize
+O/P : [a][quick][brown][fox][jumped][over][the][lazy][dog][lazydog][gmail][com]
+
+Stop Analyzer - lowercase, tokenize, splits by non-letter characters, remove stopwords
+O/P : [quick][brown][fox][jumped][over][lazy][dog][lazydog][gmail][com]
+
+
+- Searching
+  - Once an index is built, we can search that index using a Query such as IndexSearcher
+  - An IndexWriter is responsible for creating the index
+
+- Queries
+  - Lucene provides a dynamic syntax to write query
+
+  Example : 
+	- title: "some title"
+	- title: "some title" AND author: "author name"
+	- (title: "some title" AND author: "author name") OR title: "other title"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
