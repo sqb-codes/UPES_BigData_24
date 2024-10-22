@@ -1,0 +1,15 @@
+Genetic Algorithm (GA)
+
+- search and optimization technique
+- inspired by process of natural selection and evolution in biology
+
+- Mimics the principles of genetics which includes
+  - inheritance
+  - mutation
+  - selection
+  - crossover
+
+GA is used:
+  - Global optimization - they are effective at finding global optima
+  - Parallelism - explore multiple solutions simultaneously
+  - Adaptability - they can work with wide variety of optimization problems

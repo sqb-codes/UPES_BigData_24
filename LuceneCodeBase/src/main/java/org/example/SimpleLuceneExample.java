@@ -77,7 +77,7 @@ public class SimpleLuceneExample {
             // Relevance Scoring - for each document is computed based on Lucene's scoring algorithm
             // Example - TF-IDF (Term Frequency - Inverse Document Frequency)
             Document doc = searcher.doc(score.doc);
-            System.out.println("Title: " + doc.get("title"));
+            System.out.println("Title: " + doc.get("title") + " and " + "score : " + score.score);
         }
 
 

@@ -1,0 +1,8 @@
+
+Algorithm of Genetic Algorithm
+1. Initialization - Generate an initial population of candidate solution (also known as chromosomes)
+2. Fitness Evaluation - Each chromosome is evaluated using a fitness function that measure how close it is to optimal solution
+3. Selection - Select individuals from the population to breed based on their fitness
+4. Crossover - Combine two parent solutions to create on or more offspring
+5. Mutation - Occasionally alter offspring to maintain diversity in population
+6. Replacement - Replace old population with new population

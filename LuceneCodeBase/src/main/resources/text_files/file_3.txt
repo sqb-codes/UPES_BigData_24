@@ -1,0 +1,5 @@
+Why combine GA with Neural Networks ?
+1. To avoid local minima
+2. No differentiation is required
+3. Hyperparameter tuning
+4. Alternative of Backpropagation
