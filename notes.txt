@@ -1,0 +1,104 @@
+Spark Structured Streaming
+
+- micro-batching
+- DStream in Spark is a continuous streams of data
+
+RDDs - low level API
+
+- Uses the dataframe or Dataset APIs
+
+- built on top of Spark SQL
+- Consistent
+- Fault-tolerant
+
+Input Sources
+- File Source
+- Kafka Source
+- Socket Source
+- DataStreamReader - CSV, text, JSON and Parquet
+
+Sink
+- - stores the output to external file system
+- Console
+- Memory - in-memory table
+- File
+- Kafka
+
+Output Modes
+- Append
+- Update
+- Complete
+
+
+- Read from socket
+spark.readStream
+    .format("socket")
+    .option("host", "localhost")
+    .option("port",9999)
+    .load()
+
+
+count.writeStream
+    .format("console")
+    .outputMode("complete")
+    .start()
+    .awaitTermination()
+
+
+
+Read from Kafka
+spark.readStream
+    .format("kafka")
+    .option("kafka.bootstrap.servers", "192.168.100.101:9092")
+    .option("subscribe", "json_topic")
+    .option("startingOffsets", "earliest")
+    .load()
+
+
+
+count.writeStream
+    .format("kafka")
+    .outputMode("append")
+    .option("kafka.bootstrap.servers", "192.168.100.101:9092")
+    .option("subscribe", "json_topic")
+    .start()
+    .awaitTermination()
+
+
+Connecting Streaming with Mongo
+SparkSession.builder
+    .appName("X")
+    .config("spark.mongodb.write.connection.url", "mongodb://root:root@host:port/database.collection")
+
+
+=======================================
+
+PySpark Streaming Project
+- YouTube Video Comments Analysis
+  - Stream comments of a youtube video
+  - Store comments in system
+  - load comments using flask and through them in UI
+  - display comments on UI / sentiment analysis
+
+
+Pre-requisite
+- Python
+- PySpark
+- Flask
+
+
+Steps
+1. Create a virtual environment
+    - python -m venv venv
+2. Activate environment
+    - in windows -> venv\scripts\activate
+    - in mac/linux -> source venv/bin/activate
+3. Install dependencies
+    - create a file requirements.txt and mention these packages
+    pyspark
+    flask
+    requests
+    google-api-python-client
+    - pip install -r requirements.txt
+4. Freeze the packages
+    - pip freeze > requirements.txt
