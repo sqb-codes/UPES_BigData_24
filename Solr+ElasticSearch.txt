@@ -1,0 +1,93 @@
+Solr
+- Open source Java Search Server
+
+
+For mac users
+- Install JDK 11 using brew
+- brew install openjdk@11
+
+Set path
+- echo 'export PATH="/usr/local/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc
+- source ~/.zshrc
+
+Check Java version
+- java -version
+
+- brew install solr
+- brew services start solr
+- solr status
+
+
+
+Upload JSON on Windows + Linux/Mac Terminal
+bin/post -c "core_name" "file_location"
+
+Alternative
+
+Upload JSON data on windows powershell
+Invoke-RestMethod -Uri "http://localhost:8983/solr/core_upes/update?commit=true" -Method Post -ContentType "application/json" -InFile "D:\dummy_data.json"
+
+Upload JSON on mac/linux
+curl -X POST -H "Content-Type: application/json" --data-binary @data.json  "http://localhost:8983/solr/core_upes/update?commit=true"
+
+===========================================================
+Elasticsearch
+- distributed search and analytics engine
+- built on top of Apache Lucene
+- it's a part of Elastic Stack (ELK Stack)
+- it includes Logstash, Kibana
+- used for data ingestion, storage, search and visualization
+- it stores data in JSON format
+
+
+Key features of Elasticsearch
+- Distributed 
+  - it scales horizontally by adding more nodes to the cluster
+  - automatically replication and sharding data across nodes for high availability and fault tolerance
+  - Full-text search
+  - Powerful Query DSL - Domain Specific Language
+  - Kibana integration - Visualize data stored in Elasticsearch using Kibana
+
+
+Working of Elasticsearch
+- Indexing and Querying (DSL - Domain Specific Language)
+- Sharding and Replication
+- Distributed search and aggregation
+
+
+Use Cases
+- Log and Event Data Analysis - Can be used for analyzing and monitoring server logs, error logs
+- Product search
+- APM - Application Performance Monitoring - Store and query metrics to monitor application performance
+
+
+Elasticsearch Architecture
+- Cluster
+- Node
+- Index
+- Document
+- Sharding and Replicas
+
+Data logs -> Beats -> Logstash -> Elasticsearch -> Kibana
+
+
+Installation steps
+1. Download and extract elasticsearch
+2. Run the command : /bin/elasticsearch
+3. Configure elasticsearch.yaml (found in config directory)
+   - set network.host : 0.0.0.0
+   - set http.port : 9200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
