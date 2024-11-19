@@ -20,7 +20,7 @@ def data():
 
     comment_thread = Thread(target=start_streaming, args=(API_KEY, VIDEO_ID))
     comment_thread.start()
-    
+
     return jsonify(processed_data)
 
 

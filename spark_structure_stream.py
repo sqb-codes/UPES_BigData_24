@@ -30,3 +30,5 @@ def start_streaming(api_key, video_id):
     #     .start()
 
     query.awaitTermination()
+
+# start_streaming()
